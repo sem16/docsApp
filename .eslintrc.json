@@ -15,7 +15,8 @@
               { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
             ]
           }
-        ]
+        ],
+        "prefer-const": 1
       }
     },
     {

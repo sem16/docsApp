@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+		"type": "npm",
+		"script": "start",
+		"problemMatcher": [],
+		"label": "npm: start",
+		"detail": "nx serve"
+    },
+    {
+		"type": "npm",
+		"script": "run nx run api:serve",
+		"problemMatcher": [],
+		"label": "start api",
+		"detail": "nx serve"
+    },
+    {
+		"type": "npm",
+		"script": " -- nx run-many --parallel=true  --target=serve --all",
+		"problemMatcher": [],
+		"label": "start all",
+		"detail": "nx serve"
+    	}
+	]
+}
