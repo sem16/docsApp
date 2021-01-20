@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Message } from '@app/api-interfaces';
 import {DocList} from './docList';
+import './app.scss';
 export const App = () => {
   const [m, setMessage] = useState<Message>({ message: '' });
 
@@ -11,12 +12,13 @@ export const App = () => {
   }, []);
 
   return (
-    <>
-      <div style={{ textAlign: 'center' }}>
+    <div style={{ height: '100%'}}>
+      <div className="del">
       </div>
       <DocList/>
-      <div>{m.message}</div>
-    </>
+      <div className="del2">
+      </div>
+    </div>
   );
 };
 

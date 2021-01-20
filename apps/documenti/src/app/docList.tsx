@@ -43,18 +43,24 @@ interface DocListProps{
   }
   public render(): ReactElement<DocListProps> {
     return (
-      <ul className='Mylist'>
+      <div style={{ height: 'fit-content',minHeight: 'calc(100% - 20px)'}}>
         {this.state.filenames.map(file => (
+        <div className='Mylist'>
+          <div id="nome">
+            <p>{file}</p>
+          </div>
 
-        <li>{file}
-          <button
-            key={file}
-            value={file}
-            onClick={e =>this.download(e.currentTarget.value)}>
-          </button>
-        </li>
+          <div>
+            <button id="bottone"
+              key={file}
+              value={file}
+              onClick={e =>this.download(e.currentTarget.value)}>
+              <img src="../assets/download.svg"></img>
+            </button>
+          </div>
+        </div>
         ))}
-      </ul>
+      </div>
 
     );
   }

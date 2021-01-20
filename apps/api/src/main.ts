@@ -13,7 +13,7 @@ app.get('/api', (req, res) => {
 app.get('/api/files',async (req,res) => {
   // eslint-disable-next-line prefer-const
   let filenames: string[] = [];
-  readdir('./apps/api/src/assets/docs', (err,files) => {
+  readdir('apps\\api\\src\\assets', (err,files) => {
     console.log(err);
     files.forEach(file => {
       if(file != undefined || null){
@@ -29,9 +29,9 @@ app.get('/api/files',async (req,res) => {
   });
 });
 
-app.get('/api/getFile/:file',(req,res) => {
+app.get('apps\\api\\src\\assets\\docs',(req,res) => {
   req.params
-  const path= 'C:\\Users\\a.leon\\React\\app\\app\\apps\\api\\src\\assets\\docs'
+  const path= 'C:\\Users\\a.leon\\Downloads'
   res.download(path +'/'+ req.params.file,err => {
     console.log(err);
     res.send(404);

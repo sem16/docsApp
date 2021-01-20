@@ -1,5 +1,43 @@
 .Mylist{
-  list-style:  none;
-  float: left;
+  right: 0;
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  #nome{
+    grid-column: 1/2;
+    width: 100%;
+  }
 
+  #bottone{
+    grid-column: 2/2;
+    width: 100%;
+  }
+  p{
+    font-size: 19px;
+    letter-spacing: 2px;
+  }
+  button {
+    //background-image: 'C:\\Users\\a.leon\\React\\app\\app\\apps\\documenti\\src\\assets\\download.svg';
+    background-color: white;
+    position: absolute;
+    padding: 10px 10px;
+    right: 10px;
+    max-width: 40px;
+    max-height: 40px;
+    img{
+      left: 10px;
+      max-width: 10px;
+      max-height: 10px;
+    }
+  }
+}
+
+.del{
+  height: 20px;
+  width: 100%;
+  background-color: rgb(0, 170, 255);
+  position: relative;
+}
+.del2{
+  @extend .del;
+  bottom: 20px;
 }
