@@ -9,16 +9,31 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
-    <div id="root"></div>
     <div id="content">
     </div>
+    <div id="root"></div>
+
     <script>
       const a =async ()=> {
-        const res = await fetch('http://localhost:2222/');
-        const reader = res.body.getReader();
-        const a = (await reader.read()).value
-        const b = new TextDecoder("utf-8").decode(a);
-        document.getElementById("content").innerHTML = b;
+        const resWasm = await fetch('http://localhost:2222/a.wasm');
+        const readerWasm = resWasm.body.getReader();
+        const aWasm = (await readerWasm.read()).value
+        const bWasm = new TextDecoder("utf-8").decode(aWasm);
+        console.log(bWasm);
+        const resJs = await fetch('http://localhost:2222/a.js');
+        const readerJs = resJs.body.getReader();
+        const aJs = (await readerJs.read()).value
+        const bJs = new TextDecoder("utf-8").decode(aJs);
+        const jsFile = document.createElement('script');
+        console.log(bJs)
+        jsFile.src = bJs;
+        //document.appendChild(jsFile);
+
+        const resHtml = await fetch('http://localhost:2222/');
+        const readerHtml = resHtml.body.getReader();
+        const aHtml = (await readerHtml.read()).value
+        const bHtml = new TextDecoder("utf-8").decode(aHtml);
+        document.getElementById("content").innerHTML = bHtml;
       }
       a()
     </script>
