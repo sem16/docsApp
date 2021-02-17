@@ -23,11 +23,7 @@
     right: 10px;
     max-width: 40px;
     max-height: 40px;
-    img{
-      left: 10px;
-      max-width: 10px;
-      max-height: 10px;
-    }
+
   }
 }
 
@@ -40,4 +36,9 @@
 .del2{
   @extend .del;
   bottom: 20px;
+}
+
+.imgStyle{
+  max-width: 10px;
+  max-height: 10px;
 }

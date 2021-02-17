@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "all": "concurrently \"npm run  -- nx run api:serve\" \"npm run  -- nx run documenti:serve --port=80\"",
+    "all": "concurrently \"npm run  -- nx run api:serve\" \"npm run  -- nx run documenti:serve --port=4200\"",
     "nx": "nx",
     "start": "nx serve",
     "build": "nx build",

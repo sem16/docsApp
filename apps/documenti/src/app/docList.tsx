@@ -44,7 +44,7 @@ interface DocListProps{
   public render(): ReactElement<DocListProps> {
     return (
       <div style={{ height: 'fit-content',minHeight: 'calc(100% - 20px)'}}>
-        {this.state.filenames.map(file => (
+        {/* {this.state.filenames.map(file => (
         <div className='Mylist'>
           <div id="nome">
             <p>{file}</p>
@@ -57,9 +57,32 @@ interface DocListProps{
               onClick={e =>this.download(e.currentTarget.value)}>
               <img src="../assets/download.svg"></img>
             </button>
+
           </div>
         </div>
+        ))} */}
+     <table className="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">File</th>
+              <th scope="col" style={{textAlign: 'center'}}>Download</th>
+            </tr>
+          </thead>
+        {this.state.filenames.map(file => (
+          <tr>
+            <th scope="row">{file}</th>
+            <th scope="row" style={{textAlign: 'center'}}>
+              <button className="btn btn-light"
+              id="bottone"
+              key={file}
+              value={file}
+              onClick={e =>this.download(e.currentTarget.value)}>
+                <img  className="imgStyle" src="../assets/download.svg"></img>
+              </button>
+            </th>
+          </tr>
         ))}
+      </table>
       </div>
 
     );

@@ -13,11 +13,11 @@ export const App = () => {
 
   return (
     <div style={{ height: '100%'}}>
-      <div className="del">
-      </div>
+      {/* <div className="del">
+      </div> */}
       <DocList/>
-      <div className="del2">
-      </div>
+      {/* <div className="del2">
+      </div> */}
     </div>
   );
 };
