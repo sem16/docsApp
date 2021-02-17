@@ -29,10 +29,10 @@ app.get('/api/files',async (req,res) => {
   });
 });
 
-app.get('apps\\api\\src\\assets\\docs',(req,res) => {
-  req.params
+app.get('/api/getFile',(req,res) => {
+  console.log(req.query.file);
   const path= 'apps\\api\\src\\assets\\docs'
-  res.download(path +'/'+ req.params.file,err => {
+  res.download(path +'/'+ req.query.file,err => {
     console.log(err);
     res.send(404);
   });

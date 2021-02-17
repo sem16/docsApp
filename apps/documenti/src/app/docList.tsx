@@ -23,7 +23,7 @@ interface DocListProps{
   }
 
   async download(filename: string){
-    const res = await fetch(`/api/getFile/${filename}`)
+    const res = await fetch(`/api/getFile?file=${filename}`)
     if(res.ok){
       const blob = await res.blob();
       const url = window.URL.createObjectURL(blob);
