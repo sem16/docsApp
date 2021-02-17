@@ -32,10 +32,13 @@ app.get('/api/files',async (req,res) => {
 app.get('/api/getFile',(req,res) => {
   console.log(req.query.file);
   const path= 'apps\\api\\src\\assets\\docs'
-  res.download(path +'/'+ req.query.file,err => {
-    console.log(err);
-    res.send(404);
-  });
+  try{
+    res.download(path +'/'+ req.query.file)
+  }catch(err){
+      console.log(err);
+      res.send(404);
+  }
+
 });
 
 const port = process.env.port || 3333;
